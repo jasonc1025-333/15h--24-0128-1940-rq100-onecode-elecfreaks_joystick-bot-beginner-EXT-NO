@@ -564,103 +564,103 @@ input.onButtonPressed(Button.AB, function () {
         setup_ControllerOnly_Fn()
     }
 })
-// RQ-BX-G (Global)
-radio.onReceivedString(function (receivedString) {
-    if (true) {
-        _codeComment_AsText = "For Local-Controller-Remote"
-        if (!(device_Type_Bot_Bool)) {
-            _codeComment_AsText = "Only place that activates Bot"
-            _codeComment_AsText = "Bot can only be activated by wake-up message from Controller-Remote"
-            device_Type_Bot_Bool = true
-            setup_BotOnly_Fn()
-        } else if (device_Type_Bot_Bool && !(device_Mode_Edit_Bool)) {
-            if (true) {
-                if (true) {
-                    serial.writeLine("> RadioNetwork:> " + receivedString + " <")
-                }
-                screen_Clear_Func()
-                if (true) {
-                    if (receivedString == "forward") {
-                        quest_Motors.quest_Set_PowerMotorsViaBlueRedBlackPins_Fn(
-                        quest_PortGroup_BlueRedBlack_PortIds_Enum.S1_MotorLeft__S0_MotorRight,
-                        motor_Power_Full_Current_Pos,
-                        motor_Power_Full_Current_Pos
-                        )
-                        led.plot(2, 4)
-                    } else if (receivedString == "backward") {
-                        quest_Motors.quest_Set_PowerMotorsViaBlueRedBlackPins_Fn(
-                        quest_PortGroup_BlueRedBlack_PortIds_Enum.S1_MotorLeft__S0_MotorRight,
-                        motor_Power_Full_Current_Neg,
-                        motor_Power_Full_Current_Neg
-                        )
-                        led.plot(2, 0)
-                    } else if (receivedString == "left") {
-                        quest_Motors.quest_Set_PowerMotorsViaBlueRedBlackPins_Fn(
-                        quest_PortGroup_BlueRedBlack_PortIds_Enum.S1_MotorLeft__S0_MotorRight,
-                        motor_Power_Full_Current_Neg,
-                        motor_Power_Full_Current_Pos
-                        )
-                        led.plot(4, 2)
-                    } else if (receivedString == "right") {
-                        quest_Motors.quest_Set_PowerMotorsViaBlueRedBlackPins_Fn(
-                        quest_PortGroup_BlueRedBlack_PortIds_Enum.S1_MotorLeft__S0_MotorRight,
-                        motor_Power_Full_Current_Pos,
-                        motor_Power_Full_Current_Neg
-                        )
-                        led.plot(0, 2)
-                    } else if (receivedString == "stop") {
-                        _codeComment_AsText = "To complement Gear Icons"
-                        // //jwc o roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_ZERO_INT, motor_Power_ZERO_INT)
-                        quest_Motors.quest_Set_PowerMotorsViaBlueRedBlackPins_Fn(
-                        quest_PortGroup_BlueRedBlack_PortIds_Enum.S1_MotorLeft__S0_MotorRight,
-                        motor_Power_ZERO_INT,
-                        motor_Power_ZERO_INT
-                        )
-                        led.plot(2, 2)
-                        _codeComment_AsText = "During idle, show entity-type: B=Bot, C=Controller"
-                        screen_IconMesssage_Func("bot")
-                    } else if (receivedString == "arm_down") {
-                        let servoArm_DOWN_DEGREES_INT = 0
-                        pins.servoWritePin(AnalogPin.P15, servoArm_DOWN_DEGREES_INT)
-                        screen_IconMesssage_Func("d")
-                    } else if (receivedString == "arm_up") {
-                        let servoArm_UP_DEGREES_INT = 0
-                        pins.servoWritePin(AnalogPin.P15, servoArm_UP_DEGREES_INT)
-                        screen_IconMesssage_Func("u")
-                    } else if (receivedString == "gear_lo") {
-                        if (true) {
-                            motor_Power_Full_Current_Pos = motor_Power_Gear_01_MAX
-                            motor_Power_Full_Current_Neg = -1 * motor_Power_Full_Current_Pos
-                            motor_Power_Half_Current = Math.round(0.5 * motor_Power_Full_Current_Pos)
-                            screen_IconMesssage_Func("1")
-                        }
-                    } else if (receivedString == "gear_hi") {
-                        if (true) {
-                            motor_Power_Full_Current_Pos = motor_Power_Gear_02_MAX
-                            motor_Power_Full_Current_Neg = -1 * motor_Power_Full_Current_Pos
-                            motor_Power_Half_Current = Math.round(0.5 * motor_Power_Full_Current_Pos)
-                            screen_IconMesssage_Func("2")
-                        }
-                    } else {
-                        _codeComment_AsText = "Error: Unknown Msg"
-                        // //jwc o roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_ZERO_INT, motor_Power_ZERO_INT)
-                        quest_Motors.quest_Set_PowerMotorsViaBlueRedBlackPins_Fn(
-                        quest_PortGroup_BlueRedBlack_PortIds_Enum.S1_MotorLeft__S0_MotorRight,
-                        motor_Power_ZERO_INT,
-                        motor_Power_ZERO_INT
-                        )
-                        if (true) {
-                            _codeComment_AsText = "For now, all 4 corners = Error: Unknown Msg"
-                            error_Message_Func("2024-0213-1700", "abc")
-                            screen_IconMesssage_Func("error")
-                        }
-                    }
-                }
-                network__CpuCycle_Post__Management_Func()
-            }
-        }
-    }
-})
+////jwc o // RQ-BX-G (Global)
+////jwc o radio.onReceivedString(function (receivedString) {
+////jwc o     if (true) {
+////jwc o         _codeComment_AsText = "For Local-Controller-Remote"
+////jwc o         if (!(device_Type_Bot_Bool)) {
+////jwc o             _codeComment_AsText = "Only place that activates Bot"
+////jwc o             _codeComment_AsText = "Bot can only be activated by wake-up message from Controller-Remote"
+////jwc o             device_Type_Bot_Bool = true
+////jwc o             setup_BotOnly_Fn()
+////jwc o         } else if (device_Type_Bot_Bool && !(device_Mode_Edit_Bool)) {
+////jwc o             if (true) {
+////jwc o                 if (true) {
+////jwc o                     serial.writeLine("> RadioNetwork:> " + receivedString + " <")
+////jwc o                 }
+////jwc o                 screen_Clear_Func()
+////jwc o                 if (true) {
+////jwc o                     if (receivedString == "forward") {
+////jwc o                         quest_Motors.quest_Set_PowerMotorsViaBlueRedBlackPins_Fn(
+////jwc o                         quest_PortGroup_BlueRedBlack_PortIds_Enum.S1_MotorLeft__S0_MotorRight,
+////jwc o                         motor_Power_Full_Current_Pos,
+////jwc o                         motor_Power_Full_Current_Pos
+////jwc o                         )
+////jwc o                         led.plot(2, 4)
+////jwc o                     } else if (receivedString == "backward") {
+////jwc o                         quest_Motors.quest_Set_PowerMotorsViaBlueRedBlackPins_Fn(
+////jwc o                         quest_PortGroup_BlueRedBlack_PortIds_Enum.S1_MotorLeft__S0_MotorRight,
+////jwc o                         motor_Power_Full_Current_Neg,
+////jwc o                         motor_Power_Full_Current_Neg
+////jwc o                         )
+////jwc o                         led.plot(2, 0)
+////jwc o                     } else if (receivedString == "left") {
+////jwc o                         quest_Motors.quest_Set_PowerMotorsViaBlueRedBlackPins_Fn(
+////jwc o                         quest_PortGroup_BlueRedBlack_PortIds_Enum.S1_MotorLeft__S0_MotorRight,
+////jwc o                         motor_Power_Full_Current_Neg,
+////jwc o                         motor_Power_Full_Current_Pos
+////jwc o                         )
+////jwc o                         led.plot(4, 2)
+////jwc o                     } else if (receivedString == "right") {
+////jwc o                         quest_Motors.quest_Set_PowerMotorsViaBlueRedBlackPins_Fn(
+////jwc o                         quest_PortGroup_BlueRedBlack_PortIds_Enum.S1_MotorLeft__S0_MotorRight,
+////jwc o                         motor_Power_Full_Current_Pos,
+////jwc o                         motor_Power_Full_Current_Neg
+////jwc o                         )
+////jwc o                         led.plot(0, 2)
+////jwc o                     } else if (receivedString == "stop") {
+////jwc o                         _codeComment_AsText = "To complement Gear Icons"
+////jwc o                         // //jwc o roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_ZERO_INT, motor_Power_ZERO_INT)
+////jwc o                         quest_Motors.quest_Set_PowerMotorsViaBlueRedBlackPins_Fn(
+////jwc o                         quest_PortGroup_BlueRedBlack_PortIds_Enum.S1_MotorLeft__S0_MotorRight,
+////jwc o                         motor_Power_ZERO_INT,
+////jwc o                         motor_Power_ZERO_INT
+////jwc o                         )
+////jwc o                         led.plot(2, 2)
+////jwc o                         _codeComment_AsText = "During idle, show entity-type: B=Bot, C=Controller"
+////jwc o                         screen_IconMesssage_Func("bot")
+////jwc o                     } else if (receivedString == "arm_down") {
+////jwc o                         let servoArm_DOWN_DEGREES_INT = 0
+////jwc o                         pins.servoWritePin(AnalogPin.P15, servoArm_DOWN_DEGREES_INT)
+////jwc o                         screen_IconMesssage_Func("d")
+////jwc o                     } else if (receivedString == "arm_up") {
+////jwc o                         let servoArm_UP_DEGREES_INT = 0
+////jwc o                         pins.servoWritePin(AnalogPin.P15, servoArm_UP_DEGREES_INT)
+////jwc o                         screen_IconMesssage_Func("u")
+////jwc o                     } else if (receivedString == "gear_lo") {
+////jwc o                         if (true) {
+////jwc o                             motor_Power_Full_Current_Pos = motor_Power_Gear_01_MAX
+////jwc o                             motor_Power_Full_Current_Neg = -1 * motor_Power_Full_Current_Pos
+////jwc o                             motor_Power_Half_Current = Math.round(0.5 * motor_Power_Full_Current_Pos)
+////jwc o                             screen_IconMesssage_Func("1")
+////jwc o                         }
+////jwc o                     } else if (receivedString == "gear_hi") {
+////jwc o                         if (true) {
+////jwc o                             motor_Power_Full_Current_Pos = motor_Power_Gear_02_MAX
+////jwc o                             motor_Power_Full_Current_Neg = -1 * motor_Power_Full_Current_Pos
+////jwc o                             motor_Power_Half_Current = Math.round(0.5 * motor_Power_Full_Current_Pos)
+////jwc o                             screen_IconMesssage_Func("2")
+////jwc o                         }
+////jwc o                     } else {
+////jwc o                         _codeComment_AsText = "Error: Unknown Msg"
+////jwc o                         // //jwc o roboQuest.powerMotorsViaBlueRedBlackPins(PortGroup_BlueRedBlack__PortIds__Enum.S1_MotorLeft__S0_MotorRight, motor_Power_ZERO_INT, motor_Power_ZERO_INT)
+////jwc o                         quest_Motors.quest_Set_PowerMotorsViaBlueRedBlackPins_Fn(
+////jwc o                         quest_PortGroup_BlueRedBlack_PortIds_Enum.S1_MotorLeft__S0_MotorRight,
+////jwc o                         motor_Power_ZERO_INT,
+////jwc o                         motor_Power_ZERO_INT
+////jwc o                         )
+////jwc o                         if (true) {
+////jwc o                             _codeComment_AsText = "For now, all 4 corners = Error: Unknown Msg"
+////jwc o                             error_Message_Func("2024-0213-1700", "abc")
+////jwc o                             screen_IconMesssage_Func("error")
+////jwc o                         }
+////jwc o                     }
+////jwc o                 }
+////jwc o                 network__CpuCycle_Post__Management_Func()
+////jwc o             }
+////jwc o         }
+////jwc o     }
+////jwc o })
 // * Techncial Notes
 // 
 // * 2019-0519-0340
@@ -1115,12 +1115,12 @@ let network_Throttle_MilliSec_Per_CpuCycle_End = 0
 let network_Throttle_MilliSec_Per_CpuCycle_Start = 0
 let network_GroupChannel_MyBotAndController_Base0_Int = 0
 let _codeComment_AsText = ""
-if (true) {
-    _codeComment_AsText = "Set GroupChannel-# for Both Bot & Controller-Remote."
-    network_GroupChannel_MyBotAndController_Base0_Int = 1
-    setup_Network_Fn()
-    setup_BotAndController_Fn()
-}
+////jwc o if (true) {
+////jwc o     _codeComment_AsText = "Set GroupChannel-# for Both Bot & Controller-Remote."
+////jwc o     network_GroupChannel_MyBotAndController_Base0_Int = 1
+////jwc o     setup_Network_Fn()
+////jwc o     setup_BotAndController_Fn()
+////jwc o }
 basic.forever(function () {
 	
 })
@@ -1231,86 +1231,86 @@ basic.forever(function () {
         basic.showString(".")
     }
 })
-basic.forever(function () {
-    if (device_Type_Controller_Bool && !(device_Mode_Edit_Bool)) {
-        quest_Note_3.quest_Show_String_For_Note_Big_Fn(
-        "Forever::: Send Network Message to 'B'ot:: Controller_Joystick: Joystick"
-        )
-        quest_Note_5.quest_Show_String_For_Note_Big_Fn(
-        "Network Message 'name' Max_Character_Length: 8"
-        )
-        if (true) {
-            controller_Joystick__Raw_OriginAtBottomRight__X_Int = joystickbit.getRockerValue(joystickbit.rockerType.X)
-            controller_Joystick__Cartesian_OriginAtCenter__X_Int = convert_Joytick__Raw_To_Cartesian__X_Int_Func(controller_Joystick__Raw_OriginAtBottomRight__X_Int)
-            controller_Joystick__Raw_OriginAtBottomRight__Y_Int = joystickbit.getRockerValue(joystickbit.rockerType.Y)
-            controller_Joystick__Cartesian_OriginAtCenter__Y_Int = convert_Joytick__Raw_To_Cartesian__Y_Int_Func(controller_Joystick__Raw_OriginAtBottomRight__Y_Int)
-        }
-        if (true) {
-            controller_Joystick__Polar_OriginAtCenter__AngleDegree_Int = convert_Controller_Joystick__Cartesian_To_Polar__AngleDegree_AsIncremented_Int_Func_NOPARAMETERS()
-            controller_Joystick__Polar_OriginAtCenter__RayDistance_Int = convert_Controller_Joystick__Cartesian_To_Polar__RayDistance_Int_Func_NOPARAMETERS()
-        }
-        screen_Clear_Func()
-        if (controller_Joystick__Polar_OriginAtCenter__RayDistance_Int < controller_Joystick__Polar_OriginAtCenter__RayDistance__Deadzone_AsIdle__INT) {
-            quest_Note_2.quest_Show_String_For_Note_Small_Fn(
-            "Zero values if not exceed 'Deadzone_AsIdle'"
-            )
-            quest_Note_2.quest_Show_String_For_Note_Small_Fn(
-            "Motion: Not"
-            )
-            radio.sendString("stop")
-            led.plot(2, 2)
-            screen_IconMesssage_Func("controller")
-        } else {
-            if (true) {
-                quest_Note_2.quest_Show_String_For_Note_Small_Fn(
-                "Motion: Yes"
-                )
-                quest_Note_2.quest_Show_String_For_Note_Big_Fn(
-                "Convert Network Message to Operate 'B'ot: "
-                )
-                if (controller_Joystick__Polar_OriginAtCenter__AngleDegree_Int == 0 || controller_Joystick__Polar_OriginAtCenter__AngleDegree_Int == 360) {
-                    if (true) {
-                        quest_Note_2.quest_Show_String_For_Note_Small_Fn(
-                        "Controller_Joystick: East"
-                        )
-                        radio.sendString("right")
-                        led.plot(4, 2)
-                    }
-                } else if (controller_Joystick__Polar_OriginAtCenter__AngleDegree_Int == 90) {
-                    if (true) {
-                        quest_Note_2.quest_Show_String_For_Note_Small_Fn(
-                        "Controller_Joystick: North"
-                        )
-                        radio.sendString("forward")
-                        led.plot(2, 0)
-                    }
-                } else if (controller_Joystick__Polar_OriginAtCenter__AngleDegree_Int == 180) {
-                    if (true) {
-                        quest_Note_2.quest_Show_String_For_Note_Small_Fn(
-                        "Controller_Joystick: West"
-                        )
-                        radio.sendString("left")
-                        led.plot(0, 2)
-                    }
-                } else if (controller_Joystick__Polar_OriginAtCenter__AngleDegree_Int == 270) {
-                    if (true) {
-                        quest_Note_2.quest_Show_String_For_Note_Small_Fn(
-                        "Controller_Joystick: South"
-                        )
-                        radio.sendString("backward")
-                        led.plot(2, 4)
-                    }
-                } else {
-                    quest_Note_4.quest_Show_String_For_Note_Small_Fn(
-                    "Invalid 'controller_Joystick_Angle_Degrees_AsIncremented_Int'"
-                    )
-                    error_Message_Func("2024-0212-1730", convertToText(controller_Joystick__Polar_OriginAtCenter__AngleDegree_Int))
-                }
-                if (false) {
-                    convert_Controller_Joystick_AngleDegrees_ToMicrobit5x5Screen_Fn(controller_Joystick__Polar_OriginAtCenter__AngleDegree_Int)
-                }
-            }
-        }
-        network__CpuCycle_Post__Management_Func()
-    }
-})
+////jwc o basic.forever(function () {
+////jwc o     if (device_Type_Controller_Bool && !(device_Mode_Edit_Bool)) {
+////jwc o         quest_Note_3.quest_Show_String_For_Note_Big_Fn(
+////jwc o         "Forever::: Send Network Message to 'B'ot:: Controller_Joystick: Joystick"
+////jwc o         )
+////jwc o         quest_Note_5.quest_Show_String_For_Note_Big_Fn(
+////jwc o         "Network Message 'name' Max_Character_Length: 8"
+////jwc o         )
+////jwc o         if (true) {
+////jwc o             controller_Joystick__Raw_OriginAtBottomRight__X_Int = joystickbit.getRockerValue(joystickbit.rockerType.X)
+////jwc o             controller_Joystick__Cartesian_OriginAtCenter__X_Int = convert_Joytick__Raw_To_Cartesian__X_Int_Func(controller_Joystick__Raw_OriginAtBottomRight__X_Int)
+////jwc o             controller_Joystick__Raw_OriginAtBottomRight__Y_Int = joystickbit.getRockerValue(joystickbit.rockerType.Y)
+////jwc o             controller_Joystick__Cartesian_OriginAtCenter__Y_Int = convert_Joytick__Raw_To_Cartesian__Y_Int_Func(controller_Joystick__Raw_OriginAtBottomRight__Y_Int)
+////jwc o         }
+////jwc o         if (true) {
+////jwc o             controller_Joystick__Polar_OriginAtCenter__AngleDegree_Int = convert_Controller_Joystick__Cartesian_To_Polar__AngleDegree_AsIncremented_Int_Func_NOPARAMETERS()
+////jwc o             controller_Joystick__Polar_OriginAtCenter__RayDistance_Int = convert_Controller_Joystick__Cartesian_To_Polar__RayDistance_Int_Func_NOPARAMETERS()
+////jwc o         }
+////jwc o         screen_Clear_Func()
+////jwc o         if (controller_Joystick__Polar_OriginAtCenter__RayDistance_Int < controller_Joystick__Polar_OriginAtCenter__RayDistance__Deadzone_AsIdle__INT) {
+////jwc o             quest_Note_2.quest_Show_String_For_Note_Small_Fn(
+////jwc o             "Zero values if not exceed 'Deadzone_AsIdle'"
+////jwc o             )
+////jwc o             quest_Note_2.quest_Show_String_For_Note_Small_Fn(
+////jwc o             "Motion: Not"
+////jwc o             )
+////jwc o             radio.sendString("stop")
+////jwc o             led.plot(2, 2)
+////jwc o             screen_IconMesssage_Func("controller")
+////jwc o         } else {
+////jwc o             if (true) {
+////jwc o                 quest_Note_2.quest_Show_String_For_Note_Small_Fn(
+////jwc o                 "Motion: Yes"
+////jwc o                 )
+////jwc o                 quest_Note_2.quest_Show_String_For_Note_Big_Fn(
+////jwc o                 "Convert Network Message to Operate 'B'ot: "
+////jwc o                 )
+////jwc o                 if (controller_Joystick__Polar_OriginAtCenter__AngleDegree_Int == 0 || controller_Joystick__Polar_OriginAtCenter__AngleDegree_Int == 360) {
+////jwc o                     if (true) {
+////jwc o                         quest_Note_2.quest_Show_String_For_Note_Small_Fn(
+////jwc o                         "Controller_Joystick: East"
+////jwc o                         )
+////jwc o                         radio.sendString("right")
+////jwc o                         led.plot(4, 2)
+////jwc o                     }
+////jwc o                 } else if (controller_Joystick__Polar_OriginAtCenter__AngleDegree_Int == 90) {
+////jwc o                     if (true) {
+////jwc o                         quest_Note_2.quest_Show_String_For_Note_Small_Fn(
+////jwc o                         "Controller_Joystick: North"
+////jwc o                         )
+////jwc o                         radio.sendString("forward")
+////jwc o                         led.plot(2, 0)
+////jwc o                     }
+////jwc o                 } else if (controller_Joystick__Polar_OriginAtCenter__AngleDegree_Int == 180) {
+////jwc o                     if (true) {
+////jwc o                         quest_Note_2.quest_Show_String_For_Note_Small_Fn(
+////jwc o                         "Controller_Joystick: West"
+////jwc o                         )
+////jwc o                         radio.sendString("left")
+////jwc o                         led.plot(0, 2)
+////jwc o                     }
+////jwc o                 } else if (controller_Joystick__Polar_OriginAtCenter__AngleDegree_Int == 270) {
+////jwc o                     if (true) {
+////jwc o                         quest_Note_2.quest_Show_String_For_Note_Small_Fn(
+////jwc o                         "Controller_Joystick: South"
+////jwc o                         )
+////jwc o                         radio.sendString("backward")
+////jwc o                         led.plot(2, 4)
+////jwc o                     }
+////jwc o                 } else {
+////jwc o                     quest_Note_4.quest_Show_String_For_Note_Small_Fn(
+////jwc o                     "Invalid 'controller_Joystick_Angle_Degrees_AsIncremented_Int'"
+////jwc o                     )
+////jwc o                     error_Message_Func("2024-0212-1730", convertToText(controller_Joystick__Polar_OriginAtCenter__AngleDegree_Int))
+////jwc o                 }
+////jwc o                 if (false) {
+////jwc o                     convert_Controller_Joystick_AngleDegrees_ToMicrobit5x5Screen_Fn(controller_Joystick__Polar_OriginAtCenter__AngleDegree_Int)
+////jwc o                 }
+////jwc o             }
+////jwc o         }
+////jwc o         network__CpuCycle_Post__Management_Func()
+////jwc o     }
+////jwc o })
