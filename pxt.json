@@ -1,6 +1,6 @@
 {
     "name": "15h--24-0128-1940-RQ100-OneCode-Elecfreaks_Joystick-Bot-Beginner-FINAL",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "",
     "dependencies": {
         "core": "*",
